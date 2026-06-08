@@ -1,0 +1,21 @@
+{
+    "penyakit": {
+        "labels": ["Stroke", "Penyakit Jantung Iskemik", "Diabetes Melitus", "Tuberkulosis", "Sirosis Hati"],
+        "data": [131.8, 122.5, 60.2, 52.1, 34.3],
+        "label": "Angka Kematian per 100.000 Penduduk",
+        "color": "#A31D1D"
+    },
+    "olahraga": {
+        "labels": ["Jalan Kaki / Santai", "Bulutangkis", "Jogging / Lari", "Senam Kebugaran", "Sepak Bola / Futsal"],
+        "data": [42.1, 18.4, 15.2, 12.1, 9.3],
+        "label": "Persentase Partisipasi Aktif Masyarakat (%)",
+        "color": "#3B82F6"
+    },
+    "distribusi": [
+        {"provinsi": "DKI Jakarta", "lat": -6.2088, "lng": 106.8456, "rs": 185, "dokter": 12400, "alkes_berat": 95, "desc_alkes": "Akses Radioterapi & LINAC Terpusat", "desc_dokter": "Surplus Spesialis & Subspesialis"},
+        {"provinsi": "Jawa Timur", "lat": -7.5360, "lng": 112.2384, "rs": 381, "dokter": 9800, "alkes_berat": 72, "desc_alkes": "Fasilitas Penunjang Madya Madura-Jawa", "desc_dokter": "Distribusi Terkonsentrasi di Surabaya"},
+        {"provinsi": "Jawa Barat", "lat": -6.9175, "lng": 107.6191, "rs": 320, "dokter": 10500, "alkes_berat": 68, "desc_alkes": "Akselerasi CT-Scan Tingkat Rujukan", "desc_dokter": "Rasio Dokter Perkotaan Terpenuhi"},
+        {"provinsi": "Sumatera Barat", "lat": -0.7399, "lng": 100.8000, "rs": 52, "dokter": 2400, "alkes_berat": 18, "desc_alkes": "Keterbatasan Akses MRI di Luar Padang", "desc_dokter": "Defisit Spesialis Bedah Toraks"},
+        {"provinsi": "Sulawesi Selatan", "lat": -3.6687, "lng": 119.9740, "rs": 84, "dokter": 3100, "alkes_berat": 25, "desc_alkes": "Pusat Rujukan Alkes Berat Indonesia Timur", "desc_dokter": "Ketimpangan Tenaga Medis Daerah Terpencil"}
+    ]
+}

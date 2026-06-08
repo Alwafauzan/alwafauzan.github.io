@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>M. Fauzan Alwa | Portofolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
       .parallax-hero {
         background-image: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop");
@@ -12,6 +20,20 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+      /* Custom styling khusus untuk peta agar menyatu dengan tema dark/stealth */
+      .leaflet-container {
+        background: #161616 !important;
+      }
+      .leaflet-tile-container {
+        filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+      }
+      .leaflet-popup-content-wrapper,
+      .leaflet-popup-tip {
+        background: #1a1a1a !important;
+        color: #e0e0e0 !important;
+        border: 1px solid #27272a;
+        font-family: monospace;
       }
     </style>
   </head>
@@ -96,7 +118,7 @@
               >GH / GitHub</a
             >
             <a
-              href="https://wa.me/6285708367695"
+              href="https://wa.me/6282386283038"
               target="_blank"
               class="hover:text-[#E53E3E] transition-colors text-zinc-400 font-semibold"
               >WA / +62 857-0836-7695</a
@@ -147,7 +169,10 @@
       </div>
     </section>
 
-    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
+    <section
+      id="projects"
+      class="py-20 px-6 max-w-5xl mx-auto border-b border-zinc-800"
+    >
       <h2 class="text-3xl font-bold text-[#F5F5F5] text-center mb-12">
         Showcase Proyek
       </h2>
@@ -170,7 +195,7 @@
           <a
             href="./flutter/"
             class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
-            >Eksplor Proyek Flutter &rarr;</a
+            >Eksplor Proyek Flutter →</a
           >
         </div>
 
@@ -192,7 +217,7 @@
           <a
             href="./appsheet/"
             class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
-            >Eksplor Proyek AppSheet &rarr;</a
+            >Eksplor Proyek AppSheet →</a
           >
         </div>
 
@@ -214,7 +239,7 @@
           <a
             href="./machine-learning/"
             class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
-            >Eksplor Notebook Colab &rarr;</a
+            >Eksplor Notebook Colab →</a
           >
         </div>
 
@@ -236,16 +261,326 @@
           <a
             href="./automation/"
             class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
-            >Eksplor Sistem Automasi &rarr;</a
+            >Eksplor Sistem Automasi →</a
           >
         </div>
       </div>
     </section>
 
-    <footer
-      class="py-8 text-center text-xs text-zinc-600 border-t border-zinc-900"
-    >
-      <p>© 2026 M. Fauzan Alwa. Built with clean code & zero gimmicks.</p>
+    <section id="analytics" class="py-20 px-6 max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#F5F5F5]">
+          National Health Macro-Analytics
+        </h2>
+        <p class="text-zinc-400 text-sm mt-2 max-w-xl mx-auto">
+          Eksperimen pengolahan Big Data makro kesehatan, sarana rumah sakit,
+          ketersediaan alat kesehatan, dan peta distribusi medis Indonesia
+          melalui REST API lokal.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div
+          class="lg:col-span-1 bg-[#1A1A1A] p-6 rounded-xl border border-zinc-800 flex flex-col justify-between h-full min-h-[380px]"
+        >
+          <div>
+            <h3 class="text-md font-bold text-white font-mono">
+              // Metric Switcher
+            </h3>
+            <p class="text-zinc-500 text-xs mt-1 mb-6">
+              Ubah visualisasi grafik secara interaktif menggunakan tombol di
+              bawah.
+            </p>
+
+            <div class="flex flex-col gap-3">
+              <button
+                onclick="changeChartState('penyakit')"
+                id="btn-penyakit"
+                class="w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-[#A31D1D] bg-[#A31D1D]/10 text-white transition-all cursor-pointer"
+              >
+                [01] Mortalitas Penyakit Tertinggi
+              </button>
+              <button
+                onclick="changeChartState('olahraga')"
+                id="btn-olahraga"
+                class="w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer"
+              >
+                [02] Metrik Preventif Aktivitas Fisik
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="text-[11px] font-mono text-zinc-600 mt-6 pt-4 border-t border-zinc-900 leading-relaxed"
+          >
+            *Data diolah secara asinkronus menggunakan Vanilla JS fetch
+            interface dari berkas static data-driven JSON.
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-2 bg-[#1A1A1A] p-6 rounded-xl border border-zinc-800 h-full min-h-[380px] flex flex-col justify-center"
+        >
+          <div class="relative w-full h-72">
+            <canvas id="canvasHealthChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-[#1A1A1A] p-6 rounded-xl border border-zinc-800">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4"
+        >
+          <div>
+          <h3 class="text-md font-bold text-white font-mono">
+              // Regional Infrastructure Mapping
+          </h3>
+          <p class="text-zinc-500 text-xs mt-1">
+              Gunakan tombol filter kanan untuk mengubah visualisasi densitas
+              sebaran data pada klaster spasial.
+            </p>
+          </div>
+          <div
+            class="flex gap-2 bg-zinc-950 p-1 rounded-md border border-zinc-800"
+          >
+            <button
+              onclick="changeMapState('alkes')"
+              id="btn-map-alkes"
+              class="px-3 py-1.5 text-xs font-mono font-semibold rounded bg-[#A31D1D] text-white transition-all cursor-pointer"
+            >
+              Alkes Berat
+            </button>
+            <button
+              onclick="changeMapState('dokter')"
+              id="btn-map-dokter"
+              class="px-3 py-1.5 text-xs font-mono font-semibold rounded text-zinc-400 hover:text-white transition-all cursor-pointer"
+            >
+              Tenaga Dokter
+            </button>
+          </div>
+        </div>
+        <div
+          id="mapHealthDistribution"
+          class="w-full h-80 md:h-96 rounded-lg border border-zinc-800 z-0"
+        ></div>
+      </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-zinc-900 bg-[#161616]/50">
+      <div
+        class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-xs text-zinc-600 font-mono order-2 md:order-1">
+          © 2026 M. Fauzan Alwa. Built with clean code & zero gimmicks.
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-6 text-xs font-mono text-zinc-400 order-1 md:order-2"
+        >
+          <a
+            href="https://linkedin.com/in/USERNAME_KAMU"
+            target="_blank"
+            class="hover:text-[#E53E3E] transition-colors"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/alwafauzan"
+            target="_blank"
+            class="hover:text-[#E53E3E] transition-colors"
+            >GitHub</a
+          >
+          <a
+            href="https://wa.me/6282386283038"
+            target="_blank"
+            class="hover:text-[#E53E3E] transition-colors text-[#E53E3E]"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
     </footer>
+
+    <script>
+      let rawGlobalData = null;
+      let chartInstance = null;
+      let mapInstance = null;
+      let mapLayerGroup = null; // Container untuk membersihkan marker lama saat tombol diganti
+      let currentMapState = "alkes";
+
+      // Inisialisasi awal saat DOM siap
+      document.addEventListener("DOMContentLoaded", () => {
+        // Jalankan Fetch API untuk mengambil basis data JSON lokal
+        fetch("./data.json")
+          .then((response) => {
+            if (!response.ok)
+              throw new Error("Gagal membaca struktur API lokal.");
+            return response.json();
+          })
+          .then((data) => {
+            rawGlobalData = data;
+            renderChartCore(data.penyakit);
+            initMapCore(data.distribusi);
+          })
+          .catch((err) => console.error("Error Engine Data Analytics:", err));
+      });
+
+      // Engine Pembangun Chart.js
+      function renderChartCore(dataset) {
+        const ctx = document
+          .getElementById("canvasHealthChart")
+          .getContext("2d");
+        chartInstance = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: dataset.labels,
+            datasets: [
+              {
+                label: dataset.label,
+                data: dataset.data,
+                backgroundColor: dataset.color,
+                borderWidth: 0,
+                borderRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: "#222222" },
+                ticks: {
+                  color: "#71717a",
+                  font: { family: "monospace", size: 10 },
+                },
+              },
+              x: {
+                grid: { display: false },
+                ticks: {
+                  color: "#a1a1aa",
+                  font: { family: "monospace", size: 11 },
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  color: "#e4e4e7",
+                  font: { family: "monospace", size: 11 },
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // Pengendali Logika Tombol Switcher State Data
+      function changeChartState(stateKey) {
+        if (!rawGlobalData) return;
+        const targetedData = rawGlobalData[stateKey];
+
+        // Perbarui data internal Chart.js secara dinamis
+        chartInstance.data.labels = targetedData.labels;
+        chartInstance.data.datasets[0].data = targetedData.data;
+        chartInstance.data.datasets[0].label = targetedData.label;
+        chartInstance.data.datasets[0].backgroundColor = targetedData.color;
+        chartInstance.update();
+
+        // Modifikasi kosmetik tombol aktif/non-aktif
+        const btnPenyakit = document.getElementById("btn-penyakit");
+        const btnOlahraga = document.getElementById("btn-olahraga");
+
+        if (stateKey === "penyakit") {
+          btnPenyakit.className =
+            "w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-[#A31D1D] bg-[#A31D1D]/10 text-white transition-all cursor-pointer";
+          btnOlahraga.className =
+            "w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer";
+        } else {
+          btnOlahraga.className =
+            "w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-[#3B82F6] bg-[#3B82F6]/10 text-white transition-all cursor-pointer";
+          btnPenyakit.className =
+            "w-full text-left px-4 py-3 text-xs font-mono font-semibold rounded border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer";
+        }
+      }
+
+      // Inisialisasi Peta Pertama Kali
+      function initMapCore(locations) {
+        mapInstance = L.map("mapHealthDistribution").setView(
+          [-2.5489, 118.0149],
+          5,
+        );
+
+        // Gunakan CartoDB Dark Matter tile server agar selaras dengan tema stealth portfolio
+        L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution: "&copy; OpenStreetMap &copy; CARTO",
+          },
+        ).addTo(mapInstance);
+
+        mapLayerGroup = L.layerGroup().addTo(mapInstance);
+        plotMapData(locations, "alkes"); // Set default visualisasi awal ke alkes berat
+      }
+
+      // Fungsi Inti untuk Render Plot Berdasarkan State Aktif
+      function plotMapData(locations, stateType) {
+        mapLayerGroup.clearLayers(); // Hapus marker lama dari layer map container
+
+        locations.forEach((loc) => {
+          // Konfigurasi dinamis ukuran & warna bubble berdasarkan state yang dipilih
+          let radiusValue =
+            stateType === "alkes" ? loc.alkes_berat * 0.4 : loc.dokter * 0.002;
+          let markerColor = stateType === "alkes" ? "#E53E3E" : "#3B82F6";
+          let specificDesc =
+            stateType === "alkes" ? loc.desc_alkes : loc.desc_dokter;
+
+          const popupContent = `
+            <div style="line-height: 1.6; font-family: monospace;">
+              <strong style="color:${markerColor}; font-size:13px;">${loc.provinsi}</strong><br/>
+              <span style="font-size:11px; color:#a1a1aa;">
+                            • Total RS: ${loc.rs} unit<br/>
+                • Kapasitas Alkes Berat: <span style="color:#fff; font-weight:bold;">${loc.alkes_berat} unit</span><br/>
+                • Jumlah Tenaga Medis: <span style="color:#fff; font-weight:bold;">${loc.dokter.toLocaleString("id-ID")} jiwa</span><br/>
+                <hr style="border-color:#27272a; margin: 6px 0;"/>
+                <span style="color:#e4e4e7; font-style: italic;">// Analisis: ${specificDesc}</span>
+                        </span>
+                    </div>
+                `;
+
+          // Gambar CircleMarker (Bubble Map) interaktif
+          L.circleMarker([loc.lat, loc.lng], {
+            radius: Math.max(radiusValue, 8), // Memastikan gelembung data terkecil tetap bisa diklik (min 8px)
+            fillColor: markerColor,
+            color: markerColor,
+            weight: 1,
+            opacity: 0.8,
+            fillOpacity: 0.35,
+          })
+            .addTo(mapLayerGroup)
+            .bindPopup(popupContent);
+        });
+      }
+
+      // Fungsi Pengendali State Tombol Peta
+      function changeMapState(stateKey) {
+        if (!rawGlobalData) return;
+        currentMapState = stateKey;
+        plotMapData(rawGlobalData.distribusi, stateKey);
+
+        const btnAlkes = document.getElementById("btn-map-alkes");
+        const btnDokter = document.getElementById("btn-map-dokter");
+
+        if (stateKey === "alkes") {
+          btnAlkes.className =
+            "px-3 py-1.5 text-xs font-mono font-semibold rounded bg-[#A31D1D] text-white transition-all cursor-pointer";
+          btnDokter.className =
+            "px-3 py-1.5 text-xs font-mono font-semibold rounded text-zinc-400 hover:text-white transition-all cursor-pointer";
+        } else {
+          btnDokter.className =
+            "px-3 py-1.5 text-xs font-mono font-semibold rounded bg-[#3B82F6] text-white transition-all cursor-pointer";
+          btnAlkes.className =
+            "px-3 py-1.5 text-xs font-mono font-semibold rounded text-zinc-400 hover:text-white transition-all cursor-pointer";
+        }
+      }
+    </script>
   </body>
 </html>
