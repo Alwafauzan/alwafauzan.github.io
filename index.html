@@ -1,108 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>M. Fauzan Alwa | Portofolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        .parallax-hero {
-            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+      .parallax-hero {
+        background-image: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     </style>
-</head>
-<body class="bg-[#121212] text-[#E0E0E0] font-sans selection:bg-[#A31D1D] selection:text-white">
+  </head>
+  <body
+    class="bg-[#121212] text-[#E0E0E0] font-sans selection:bg-[#A31D1D] selection:text-white"
+  >
+    <header
+      class="parallax-hero relative h-screen flex items-center justify-center text-center px-6"
+    >
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-xs"></div>
 
-    <header class="parallax-hero relative h-screen flex items-center justify-center text-center px-6">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-xs"></div>
-        
-        <div class="relative z-10 max-w-3xl">
-            <div class="mb-6 flex justify-center">
-                <div class="relative p-1 rounded-2xl bg-gradient-to-b from-[#A31D1D] to-transparent shadow-2xl shadow-black/90">
-                    <img src="https://lh3.googleusercontent.com/d/1W56UGhjsl2EbK8OK4HJry0itX--Vn3VX" 
-                         alt="M. Fauzan Alwa" 
-                         class="w-32 h-44 md:w-36 md:h-52 rounded-xl object-cover object-top border border-zinc-800">
-                </div>
-            </div>
+      <div class="relative z-10 max-w-3xl">
+        <!-- <div class="mb-6 flex justify-center">
+          <div
+            class="relative p-1 rounded-2xl bg-gradient-to-b from-[#A31D1D] to-transparent shadow-2xl shadow-black/90"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/d/13IscyeafRzUKbs-5uWx5tMX6bf8mbcBN"
+              alt="M. Fauzan Alwa"
+              class="w-32 h-44 md:w-36 md:h-52 rounded-xl object-cover object-top border border-zinc-800"
+            />
+          </div>
+        </div> -->
 
-            <p class="text-[#E53E3E] font-mono tracking-widest text-xs md:text-sm mb-3 uppercase font-semibold">// Biomedical Engineer & Developer</p>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-[#F5F5F5] tracking-tight mb-4 drop-shadow-md">M. Fauzan Alwa</h1>
-            <p class="text-sm md:text-base text-zinc-400 mb-8 max-w-xl mx-auto leading-relaxed">
-                Menjembatani teknologi medis dan otomatisasi sistem. Berfokus pada pengembangan perangkat lunak, optimasi proses, dan solusi IoT.
-            </p>
-            <div class="flex flex-row justify-center items-center gap-4">
-                <a href="#projects" class="px-5 py-2.5 md:px-6 md:py-3 bg-[#A31D1D] hover:bg-[#C22727] text-white font-medium rounded-md transition-all duration-300 shadow-lg shadow-black/60 text-sm md:text-base">Lihat Proyek</a>
-                <a href="#about" class="px-5 py-2.5 md:px-6 md:py-3 border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-medium rounded-md transition-all duration-300 text-sm md:text-base">Tentang Saya</a>
-            </div>
+        <div class="mb-6 flex justify-center">
+          <div
+            class="relative p-1 rounded-full bg-gradient-to-b from-[#A31D1D] to-transparent shadow-2xl shadow-black/90"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/d/13IscyeafRzUKbs-5uWx5tMX6bf8mbcBN"
+              alt="M. Fauzan Alwa"
+              class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover object-top border border-zinc-800"
+            />
+          </div>
         </div>
+
+        <p
+          class="text-[#E53E3E] font-mono tracking-widest text-xs md:text-sm mb-3 uppercase font-semibold"
+        >
+          // Biomedical Engineer & Developer
+        </p>
+        <h1
+          class="text-4xl md:text-6xl font-extrabold text-[#F5F5F5] tracking-tight mb-4 drop-shadow-md"
+        >
+          M. Fauzan Alwa
+        </h1>
+        <p
+          class="text-sm md:text-base text-zinc-400 mb-8 max-w-xl mx-auto leading-relaxed"
+        >
+          Menjembatani teknologi medis dan otomatisasi sistem. Berfokus pada
+          pengembangan perangkat lunak, optimasi proses, dan solusi IoT.
+        </p>
+        <div class="flex flex-row justify-center items-center gap-4">
+          <a
+            href="#projects"
+            class="px-5 py-2.5 md:px-6 md:py-3 bg-[#A31D1D] hover:bg-[#C22727] text-white font-medium rounded-md transition-all duration-300 shadow-lg shadow-black/60 text-sm md:text-base"
+            >Lihat Proyek</a
+          >
+          <a
+            href="#about"
+            class="px-5 py-2.5 md:px-6 md:py-3 border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-medium rounded-md transition-all duration-300 text-sm md:text-base"
+            >Tentang Saya</a
+          >
+        </div>
+      </div>
     </header>
 
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto border-b border-zinc-800">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
-                <h2 class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono">01. Kapabilitas</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">Mengintegrasikan pemahaman regulasi alat kesehatan (PJT Distribusi) dengan implementasi teknis automasi menggunakan ekosistem modern.</p>
-            </div>
-            <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
-                <h2 class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono">02. Tech Stack</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">Flutter/Dart, Google Apps Script, Supabase, Linux Environment (Fedora Workstation), dan kustomisasi IoT berbasis mikrokontroler.</p>
-            </div>
-            <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
-                <h2 class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono">03. Metodologi</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">Membangun arsitektur kode yang bersih, efisien, dan berorientasi pada penyelesaian masalah nyata (Problem-Solver First).</p>
-            </div>
+    <section
+      id="about"
+      class="py-20 px-6 max-w-5xl mx-auto border-b border-zinc-800"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
+          <h2
+            class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono"
+          >
+            01. Kapabilitas
+          </h2>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Mengintegrasikan pemahaman regulasi alat kesehatan (PJT Distribusi)
+            dengan implementasi teknis automasi menggunakan ekosistem modern.
+          </p>
         </div>
+        <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
+          <h2
+            class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono"
+          >
+            02. Tech Stack
+          </h2>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Flutter/Dart, Google Apps Script, Supabase, Linux Environment
+            (Fedora Workstation), dan kustomisasi IoT berbasis mikrokontroler.
+          </p>
+        </div>
+        <div class="p-4 rounded-lg hover:bg-zinc-900/30 transition-all">
+          <h2
+            class="text-xl font-bold text-[#F5F5F5] border-l-4 border-[#A31D1D] pl-3 mb-4 font-mono"
+          >
+            03. Metodologi
+          </h2>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Membangun arsitektur kode yang bersih, efisien, dan berorientasi
+            pada penyelesaian masalah nyata (Problem-Solver First).
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-[#F5F5F5] text-center mb-12">Showcase Proyek</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-mono text-[#E53E3E]">01 / MOBILE DEVELOPMENT</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Native Mobile Apps (Flutter)</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Koleksi 5 aplikasi mobile lintas platform yang dibangun untuk efisiensi performa, manajemen database, dan integrasi real-time.</p>
-                </div>
-                <a href="./flutter/" class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit">Eksplor Proyek Flutter &rarr;</a>
-            </div>
-
-            <div class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-mono text-[#E53E3E]">02 / LOW-CODE SOLUTIONS</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">AppSheet Architecture</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Pengembangan arsitektur internal bisnis cerdas dan manajemen data logistik alat kesehatan dengan efisiensi tinggi.</p>
-                </div>
-                <a href="./appsheet/" class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit">Eksplor Proyek AppSheet &rarr;</a>
-            </div>
-
-            <div class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-mono text-[#E53E3E]">03 / DATA SCIENCE & ML</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Machine Learning Modeling</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Eksperimen komputasi cerdas, pemrosesan sinyal biomedis, dan pemodelan prediktif berbasis Google Colab notebook.</p>
-                </div>
-                <a href="./machine-learning/" class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit">Eksplor Notebook Colab &rarr;</a>
-            </div>
-
-            <div class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-mono text-[#E53E3E]">04 / AUTOMATION & SYSTEM</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Web Automation & Other Systems</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Integrasi Google Apps Script, dashboard administrasi PJT Alkes, manipulasi data otomatis, serta kustomisasi IoT hardware.</p>
-                </div>
-                <a href="./automation/" class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit">Eksplor Sistem Automasi &rarr;</a>
-            </div>
-
+      <h2 class="text-3xl font-bold text-[#F5F5F5] text-center mb-12">
+        Showcase Proyek
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between"
+        >
+          <div>
+            <span class="text-xs font-mono text-[#E53E3E]"
+              >01 / MOBILE DEVELOPMENT</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">
+              Native Mobile Apps (Flutter)
+            </h3>
+            <p class="text-zinc-400 text-sm mb-6">
+              Koleksi 5 aplikasi mobile lintas platform yang dibangun untuk
+              efisiensi performa, manajemen database, dan integrasi real-time.
+            </p>
+          </div>
+          <a
+            href="./flutter/"
+            class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
+            >Eksplor Proyek Flutter &rarr;</a
+          >
         </div>
+
+        <div
+          class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between"
+        >
+          <div>
+            <span class="text-xs font-mono text-[#E53E3E]"
+              >02 / LOW-CODE SOLUTIONS</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">
+              AppSheet Architecture
+            </h3>
+            <p class="text-zinc-400 text-sm mb-6">
+              Pengembangan arsitektur internal bisnis cerdas dan manajemen data
+              logistik alat kesehatan dengan efisiensi tinggi.
+            </p>
+          </div>
+          <a
+            href="./appsheet/"
+            class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
+            >Eksplor Proyek AppSheet &rarr;</a
+          >
+        </div>
+
+        <div
+          class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between"
+        >
+          <div>
+            <span class="text-xs font-mono text-[#E53E3E]"
+              >03 / DATA SCIENCE & ML</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">
+              Machine Learning Modeling
+            </h3>
+            <p class="text-zinc-400 text-sm mb-6">
+              Eksperimen komputasi cerdas, pemrosesan sinyal biomedis, dan
+              pemodelan prediktif berbasis Google Colab notebook.
+            </p>
+          </div>
+          <a
+            href="./machine-learning/"
+            class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
+            >Eksplor Notebook Colab &rarr;</a
+          >
+        </div>
+
+        <div
+          class="bg-[#1A1A1A] p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all group flex flex-col justify-between"
+        >
+          <div>
+            <span class="text-xs font-mono text-[#E53E3E]"
+              >04 / AUTOMATION & SYSTEM</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">
+              Web Automation & Other Systems
+            </h3>
+            <p class="text-zinc-400 text-sm mb-6">
+              Integrasi Google Apps Script, dashboard administrasi PJT Alkes,
+              manipulasi data otomatis, serta kustomisasi IoT hardware.
+            </p>
+          </div>
+          <a
+            href="./automation/"
+            class="inline-flex items-center text-xs font-mono text-white bg-zinc-800 group-hover:bg-[#A31D1D] px-4 py-2.5 rounded transition-all duration-300 w-fit"
+            >Eksplor Sistem Automasi &rarr;</a
+          >
+        </div>
+      </div>
     </section>
 
-    <footer class="py-8 text-center text-xs text-zinc-600 border-t border-zinc-900">
-        <p>© 2026 M. Fauzan Alwa. Built with clean code & zero gimmicks.</p>
+    <footer
+      class="py-8 text-center text-xs text-zinc-600 border-t border-zinc-900"
+    >
+      <p>© 2026 M. Fauzan Alwa. Built with clean code & zero gimmicks.</p>
     </footer>
-</body>
+  </body>
 </html>
