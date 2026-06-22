@@ -75,16 +75,22 @@
           pengembangan perangkat lunak, optimasi proses, dan solusi IoT.
         </p>
 
-        <div
-          class="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/60 border border-zinc-800 backdrop-blur-xs text-[11px] font-mono tracking-wider"
-        >
-          <span
-            class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
-          ></span>
-          <span class="text-zinc-500">LIVE USD/IDR:</span>
-          <span id="usd-ticker" class="text-zinc-200 font-bold"
-            >Mengambil data...</span
+        <div class="mb-8 flex flex-col items-center gap-1.5">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/60 border border-zinc-800 backdrop-blur-xs text-[11px] font-mono tracking-wider"
           >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+            ></span>
+            <span class="text-zinc-500">LIVE USD/IDR:</span>
+            <span id="usd-ticker" class="text-zinc-200 font-bold"
+              >Mengambil data...</span
+            >
+          </div>
+          <div
+            id="usd-next-update"
+            class="text-[9px] font-mono text-zinc-600 tracking-tight"
+          ></div>
         </div>
 
         <div class="flex flex-col items-center gap-6">
@@ -331,7 +337,7 @@
         >
           <div>
             <h3 class="text-md font-bold text-white font-mono">
-              // Regional Infrastructure Mapping
+              // Regional Infrastructure & Resource Mapping
             </h3>
             <p class="text-zinc-500 text-xs mt-1">
               Gunakan tombol filter kanan untuk mengubah visualisasi densitas
@@ -421,7 +427,7 @@
         fetchLiveCurrency();
       });
 
-      // Engine Live Currency USD/IDR Tracker
+      // Engine Live Currency USD/IDR Tracker + Next Update Parser
       function fetchLiveCurrency() {
         fetch("https://open.er-api.com/v6/latest/USD")
           .then((response) => {
@@ -439,12 +445,38 @@
               document.getElementById("usd-ticker").innerText =
                 `${formattedRate}`;
             }
+
+            // Parsing Epoch timestamp dari API ke format lokal objek Date
+            if (data.time_next_update_unix) {
+              const nextUpdateDate = new Date(
+                data.time_next_update_unix * 1000,
+              );
+
+              // Formatting waktu lokal Indonesia (WIB/WITA/WIT sesuai device rekruter)
+              const options = {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZoneName: "short",
+              };
+              const localTimeString = nextUpdateDate.toLocaleDateString(
+                "id-ID",
+                options,
+              );
+
+              document.getElementById("usd-next-update").innerText =
+                `// Pembaruan API berikutnya: ${localTimeString}`;
+            }
           })
           .catch((err) => {
             console.error("Currency fault:", err);
             document.getElementById("usd-ticker").innerText = "Offline";
             document.getElementById("usd-ticker").className =
               "text-zinc-600 font-bold";
+            document.getElementById("usd-next-update").innerText =
+              "// Sinkronisasi API terputus.";
           });
       }
 
@@ -603,3 +635,4 @@
     </script>
   </body>
 </html>
+F
